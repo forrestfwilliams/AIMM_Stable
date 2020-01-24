@@ -12,18 +12,21 @@ arcpy.env.pyramid = 'NONE'
 arcpy.env.cellSize = 'MAXOF'
 from arcpy.sa import *
 
-# Set name and working directory
-name = 'AIMM2'
-cwd = 'C:\\Users\\forrestw\\Documents\\AIMM_tomer_6419'
+# Set working directory
+cwd = 'C:\\AIMM\\nishnabotna\\output01242020'
 os.chdir(cwd)
 arcpy.env.workspace = cwd
 
+counties = ['adair', 'audubon', 'carroll', 'cass', 'crawford',
+            'fremont', 'guthrie', 'mills', 'montgomery',
+            'page', 'pottawattamie', 'shelby']
 # Load input data
-dem = arcpy.Raster('dem.tif')
-thresh_mask = arcpy.Raster('hardin_2widthbuff_no2.tif')
-clip_mask = arcpy.Raster('sfir_2widthbuff_incl2.tif')
-ndwi_old = arcpy.Raster('E:\\forrest\\nishnabotna\\AIMM\\ndwi_09\\crawfor8_2009')
-ndwi_new = arcpy.Raster('E:\\forrest\\nishnabotna\\AIMM\\ndwi_18\\crawfor8_2018')
+name = 'adair'
+dem = arcpy.Raster('C:\\AIMM\\nishnabotna\\dem\\adair.img')
+thresh_mask = arcpy.Raster('C:\\AIMM\\nishnabotna\\watershed\\waterways_mask_current.tif')
+clip_mask = arcpy.Raster('C:\\AIMM\\nishnabotna\\watershed\\waterways_mask_current.tif')
+ndwi_old = arcpy.Raster('C:\\AIMM\\nishnabotna\\ndwi_09\\adair8_2009')
+ndwi_new = arcpy.Raster('C:\\AIMM\\nishnabotna\\ndwi_18\\adair8_2018')
 
 #```````````````````````````````````````````````````````````````#
 # Set snap raster
