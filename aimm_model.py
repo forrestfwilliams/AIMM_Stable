@@ -22,9 +22,10 @@ arcpy.env.workspace = cwd
 dem = arcpy.Raster('dem.tif')
 thresh_mask = arcpy.Raster('hardin_2widthbuff_no2.tif')
 clip_mask = arcpy.Raster('sfir_2widthbuff_incl2.tif')
-ndwi_old = arcpy.Raster('hardin8_2002.tif')
-ndwi_new = arcpy.Raster('hardin8_2009.tif')
+ndwi_old = arcpy.Raster('E:\\forrest\\nishnabotna\\AIMM\\ndwi_09\\crawfor8_2009')
+ndwi_new = arcpy.Raster('E:\\forrest\\nishnabotna\\AIMM\\ndwi_18\\crawfor8_2018')
 
+#```````````````````````````````````````````````````````````````#
 # Set snap raster
 arcpy.env.snapRaster = ndwi_old
 
@@ -33,28 +34,28 @@ start = time.time()
 print('starting '+name)
 print(datetime.datetime.now())
 
-## Set cell size option to minimum of rasters and calculate threshold for first image
-#arcpy.env.cellSize = 'MINOF'
-#t_old = aimm.calc_thresh(ndwi_old, thresh_mask, 5e6, 255)
-#print(t_old[0])
-#
-## Create and save histogram of NDWI values
-#hist1 = plt.hist(t_old[1], bins = 255)
-#plt.savefig(name+'_2002.jpg')
-#plt.close()
-#
-## Calculate threshold for second image
-#t_new = aimm.calc_thresh(ndwi_new, thresh_mask, 5e6, 255)
-#print(t_new[0])
-#
-## Create and save histogram of NDWI values
-#hist2 = plt.hist(t_new[1], bins = 255)
-#plt.savefig(name+'_2009.jpg')
-#plt.close()
-#
-#print('thresholds selected')
-#print(datetime.datetime.now())
-#del hist1, hist2
+# Set cell size option to minimum of rasters and calculate threshold for first image
+arcpy.env.cellSize = 'MINOF'
+t_old = aimm.calc_thresh(ndwi_old, thresh_mask, 5e6, 255)
+print(t_old[0])
+
+# Create and save histogram of NDWI values
+hist1 = plt.hist(t_old[1], bins = 255)
+plt.savefig(name+'_2002.jpg')
+plt.close()
+
+# Calculate threshold for second image
+t_new = aimm.calc_thresh(ndwi_new, thresh_mask, 5e6, 255)
+print(t_new[0])
+
+# Create and save histogram of NDWI values
+hist2 = plt.hist(t_new[1], bins = 255)
+plt.savefig(name+'_2009.jpg')
+plt.close()
+
+print('thresholds selected')
+print(datetime.datetime.now())
+del hist1, hist2
 t_old = [137, 0]
 t_new = [143, 0]
 
