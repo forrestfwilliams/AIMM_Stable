@@ -23,12 +23,12 @@ counties = ['adair', 'audubon', 'carroll', 'cass', 'crawford',
 counties = counties[0:1]
 for county in counties:
     # Load input data
-    name = 'adair'
-    dem = arcpy.Raster('C:\\AIMM\\nishnabotna\\dem\\adair.img')
+    name = county
+    dem = arcpy.Raster('C:\\AIMM\\nishnabotna\\dem\\{}.img'.format(county))
     thresh_mask = arcpy.Raster('C:\\AIMM\\nishnabotna\\watershed\\waterways_mask_current.tif')
     clip_mask = arcpy.Raster('C:\\AIMM\\nishnabotna\\watershed\\waterways_mask_current.tif')
-    ndwi_old = arcpy.Raster('C:\\AIMM\\nishnabotna\\ndwi_09\\adair8_2009')
-    ndwi_new = arcpy.Raster('C:\\AIMM\\nishnabotna\\ndwi_18\\adair8_2018')
+    ndwi_old = arcpy.Raster('C:\\AIMM\\nishnabotna\\ndwi_09\\{}8_2009.tif'.format(county))
+    ndwi_new = arcpy.Raster('C:\\AIMM\\nishnabotna\\ndwi_18\\{}8_2018.tif'.format(county))
 
     #```````````````````````````````````````````````````````````````#
     # Set snap raster
@@ -46,7 +46,7 @@ for county in counties:
 
     # Create and save histogram of NDWI values
     hist1 = plt.hist(t_old[1], bins = 255)
-    plt.savefig(name+'_2002.jpg')
+    plt.savefig(name+'_2009.jpg')
     plt.close()
 
     # Calculate threshold for second image
@@ -55,17 +55,12 @@ for county in counties:
 
     # Create and save histogram of NDWI values
     hist2 = plt.hist(t_new[1], bins = 255)
-    plt.savefig(name+'_2009.jpg')
+    plt.savefig(name+'_2018.jpg')
     plt.close()
 
     print('thresholds selected')
     print(datetime.datetime.now())
     del hist1, hist2
-    t_old = [137, 0]
-    t_new = [143, 0]
-
-    ndwi_old = arcpy.Raster('sfir8_2002.tif')
-    ndwi_new = arcpy.Raster('sfir8_2009.tif')
 
     # Create binary rasters of channel location by 
     # Reclassify land pixels to 0 and water/channel pixels to 1 for old image and 2 for new image

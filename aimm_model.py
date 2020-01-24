@@ -59,11 +59,6 @@ plt.close()
 print('thresholds selected')
 print(datetime.datetime.now())
 del hist1, hist2
-t_old = [137, 0]
-t_new = [143, 0]
-
-ndwi_old = arcpy.Raster('sfir8_2002.tif')
-ndwi_new = arcpy.Raster('sfir8_2009.tif')
 
 # Create binary rasters of channel location by 
 # Reclassify land pixels to 0 and water/channel pixels to 1 for old image and 2 for new image

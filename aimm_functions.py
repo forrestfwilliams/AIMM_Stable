@@ -2,7 +2,7 @@
 import arcpy
 import numpy as np
 import pandas as pd
-import skimage
+from skimage import filters
 import random
 arcpy.CheckOutExtension('Spatial')
 arcpy.env.overwriteOutput = True
@@ -58,7 +58,7 @@ def calc_thresh(ndwi, mask, size, max_val):
         vals = np.random.choice(arr, int(samp_size), False)
         
         # Use Li's Entropy Threshold to determin
-        thresh = skimage.filters.threshold_li(vals)
+        thresh = filters.threshold_li(vals)
         
         # Append threshold to threshold list
         t_list.append(thresh)
