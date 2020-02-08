@@ -20,7 +20,7 @@ arcpy.env.workspace = cwd
 counties = ['adair', 'audubon', 'carroll', 'cass', 'crawford',
             'fremont', 'guthrie', 'mills', 'montgomery',
             'page', 'pottawattamie', 'shelby']
-counties = counties[0:1]
+##counties = counties[0:1]
 for county in counties:
     # Load input data
     name = county
