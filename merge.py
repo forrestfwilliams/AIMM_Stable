@@ -24,7 +24,6 @@ orders = [3,4,5,6,7]
 counties = ['adair', 'audubon', 'carroll', 'cass', 'crawford',
             'fremont', 'guthrie', 'mills', 'montgomery',
             'page', 'pottawattamie', 'shelby']
-counties.remove('crawford')
 
 for county in counties:
     print(county)
@@ -56,6 +55,3 @@ for order in orders:
         row[0] = order
         cursor.updateRow(row)
     del cursor
-
-polLyr = arcpy.SelectLayerByAttribute_management(polLyr, 'NEW_SELECTION', "hdiff <> 0")
-arcpy.Copy_management('polygon', 'noZero.shp')
