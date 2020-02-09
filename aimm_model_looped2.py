@@ -13,7 +13,7 @@ arcpy.env.cellSize = 'MAXOF'
 from arcpy.sa import *
 
 # Set working directory
-cwd = 'C:\\AIMM\\nishnabotna\\output01242020'
+cwd = 'C:\\AIMM\\nishnabotna\\outputMaskChange'
 os.chdir(cwd)
 arcpy.env.workspace = cwd
 
@@ -21,12 +21,12 @@ counties = ['adair', 'audubon', 'carroll', 'cass', 'crawford',
             'fremont', 'guthrie', 'mills', 'montgomery',
             'page', 'pottawattamie', 'shelby']
 ##counties = counties[0:1]
-counties = ['crawford', 'guthrie']
+counties = ['crawford']
 for county in counties:
     # Load input data
     name = county
     dem = arcpy.Raster('C:\\AIMM\\nishnabotna\\dem\\{}.img'.format(county))
-    thresh_mask = arcpy.Raster('C:\\AIMM\\nishnabotna\\watershed\\waterways_mask_current.tif')
+    thresh_mask = arcpy.Raster('C:\\AIMM\\nishnabotna\\watershed\\nish_county.tif')
     clip_mask = arcpy.Raster('C:\\AIMM\\nishnabotna\\watershed\\waterways_mask_current.tif')
     ndwi_old = arcpy.Raster('C:\\AIMM\\nishnabotna\\ndwi_09\\{}8_2009.tif'.format(county))
     ndwi_new = arcpy.Raster('C:\\AIMM\\nishnabotna\\ndwi_18\\{}8_2018.tif'.format(county))
@@ -43,7 +43,7 @@ for county in counties:
     # Set cell size option to minimum of rasters and calculate threshold for first image
     arcpy.env.cellSize = 'MINOF'
     t_old = aimm.calc_thresh(ndwi_old, thresh_mask, 5e6, 255)
-    t_old[0] = 154 #changed
+    t_old[0] = 156 #changed
     print(t_old[0])
 
     # Create and save histogram of NDWI values
