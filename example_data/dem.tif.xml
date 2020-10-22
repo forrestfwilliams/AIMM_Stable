@@ -1,0 +1,274 @@
+<?xml version="1.0"?>
+<metadata>
+	<idinfo>
+		<descript>
+			<abstract>This data set represents a digital elevation model (DEM) of the land surface of Pottawattamie County, Iowa, in the UTM projection, Zone 15, NAD83 horizontal datum, with elevation in centimeters NAVD 88 vertical datum.  The DEM has a horizontal resolution of 3 meters and was aggregated from one meter resolution elevation data from the state of Iowa's LiDAR program.  The aggregation process uses a 3x3 pixel moving average window, which helps to smooth out noise in the one meter data, but also softens sharp edges of landscape features such as ditches and ridges, which may be undesirable for some purposes.  The DEM was then Integerizied to shrink the size of the file, so final units are in centimeters.  Water features sometimes have a triangular appearance due to lack of lidar returns over water and should be ignored.</abstract>
+			<purpose>This DEM was mainly developed as a basis for creating smooth looking 2' contours.  It could also be used in modeling programs requiring a compact representation of the land surface elevation.  The suitability for technical, scientific, or finished cartographic purposes is unknown and should not be assumed without thorough testing.</purpose>
+			<langdata Sync="TRUE">en</langdata>
+		</descript>
+		<keywords>
+			<theme>
+				<themekt>ISO 19115 Topic Category</themekt>
+				<themekey>elevation</themekey>
+				<themekey>imageryBaseMapsEarthCover</themekey>
+			</theme>
+			<theme>
+				<themekt>None</themekt>
+				<themekey>Contours</themekey>
+				<themekey>Hypsography</themekey>
+			</theme>
+			<place>
+				<placekt>GNIS</placekt>
+				<placekey>Iowa</placekey>
+			</place>
+		</keywords>
+		<ptcontac>
+			<cntinfo>
+				<cntperp>
+					<cntper>Jim Giglierano</cntper>
+					<cntorg>Iowa DNR</cntorg>
+				</cntperp>
+				<cntvoice>319-335-1575</cntvoice>
+				<cntemail>james.giglierano "at" dnr.iowa.gov</cntemail>
+				<cntaddr>
+					<addrtype>mailing address</addrtype>
+					<address>109 Trowbridge Hall</address>
+					<city>Iowa City</city>
+					<state>IA</state>
+					<postal>52240</postal>
+				</cntaddr>
+				<cntpos>research geologist</cntpos>
+			</cntinfo>
+		</ptcontac>
+		<timeperd>
+			<current>ground condition</current>
+			<timeinfo>
+				<rngdates><begdate>2008</begdate><begtime>spring</begtime><enddate>2010</enddate><endtime>spring</endtime></rngdates></timeinfo>
+		</timeperd>
+		<status>
+			<progress>Complete</progress>
+			<update>None planned</update>
+		</status>
+		<accconst>None</accconst>
+		<useconst>The development of the coverages in the NRGIS Library represents a major
+investment of staff time and effort.  As a professional responsibility, the Iowa
+DNR expects to receive proper credit when these GIS coverages are utilized.
+he Department also expects that the original documentation will remain with
+any redistribution of these coverages.</useconst>
+		<secinfo>
+			<secsys>State of Iowa Enterprise Data Classification Standard</secsys>
+			<secclass>Public</secclass>
+		</secinfo>
+		<datacred>One meter bare earth DEMs were developed from lidar point data by the Iowa Geological and Water Survey, by Chris Kahle and Andy Asell using LP360 software.  Extraction of DEM was performed by Jesse Soukup and Jim Giglierano using Arc GIS 9.3 software.  Execution of Integerization and final data prep/check was performed by Jesse Soukup.</datacred>
+		<native>ArcGIS 9.3.1</native>
+		<natvform>Erdas Imagine</natvform>
+		<citation>
+			<citeinfo>
+				<origin>Iowa Geological and Water Survey, DNR</origin>
+				<pubdate>20101021</pubdate>
+				<title>Three Meter Digital Elevation Model of Pottawattamie County Iowa as an Imagine 16-bit Integer Raster</title>
+				<geoform>Raster digital data</geoform>
+				<onlink>ftp://ftp.igsb.uiowa.edu/gis_library/counties/Pottawattamie/DEM_3M_I_78.zip</onlink>
+				<ftname Sync="TRUE">DEM_3m_I_78.img</ftname>
+				<edition>20101021</edition>
+			</citeinfo>
+		</citation>
+		<spdom>
+			<lboundng>
+				<leftbc Sync="TRUE">247892.733817</leftbc>
+				<rightbc Sync="TRUE">320171.733817</rightbc>
+				<bottombc Sync="TRUE">4558678.000000</bottombc>
+				<topbc Sync="TRUE">4599361.000000</topbc>
+			</lboundng>
+			<bounding>
+				<westbc Sync="TRUE">-96.020712</westbc>
+				<eastbc Sync="TRUE">-95.143336</eastbc>
+				<northbc Sync="TRUE">41.525705</northbc>
+				<southbc Sync="TRUE">41.140265</southbc>
+			</bounding>
+		</spdom>
+	</idinfo>
+	<dataqual>
+		<lineage>
+			<srcinfo>
+				<srccite>
+					<citeinfo>
+						<pubdate>Unpublished Material</pubdate>
+						<title>One Meter Digital Elevation Models of Lidar Blocks in Iowa</title>
+						<othercit>Chris Kahle and Andy Asell of the Iowa Geological and Water Survey are using LP360 to create 1 meter blocks using the LAS lidar tiles supplied by the project contractor.</othercit>
+						<onlink>ftp://ftp.igsb.uiowa.edu/gis_library/projects/Iowa_Lidar/Block_data/Lidar_Block_data.html</onlink>
+					</citeinfo>
+				</srccite>
+				<srcscale>4,800 (estimated)</srcscale>
+				<typesrc>digital raster data</typesrc>
+				<srctime>
+					<timeinfo>
+						<mdattim>
+							<sngdate>
+								<caldate>2008</caldate>
+							</sngdate>
+						</mdattim>
+					</timeinfo>
+					<srccurr>ground condition</srccurr>
+				</srctime>
+			</srcinfo>
+			<procstep>
+				<procdesc>Merge one meter bare earth DEM blocks into superblocks covering one or more Iowa counties.  Clip using at least a one mile buffer around each county border using ArcMAP data frame and data export command.  New file is in ERDAS imagine format, 32 bit float.  New file named /countyname/DEM1m.img</procdesc>
+			</procstep>
+			<procstep>
+				<procdesc>Create 3 meter resolution grids using spatial analyst/surface/aggregate command, cell factor 3 and aggregation method 'mean'.  New file named /countyname/DEM3m.img</procdesc>
+				<proccont>
+					<cntinfo>
+						<cntperp>
+							<cntper>Jim Giglierano</cntper>
+						</cntperp>
+					</cntinfo>
+				</proccont>
+			</procstep>
+			<procstep>
+				<procdesc>Integerized the grid by using a Times command (x100), then an Add command (0.5), then and Int command.  This allows the value to be rounded to the nearest centimeter.  Final Grid is a 16-bit Imagine file.</procdesc>
+				<proccont>
+					<cntinfo>
+						<cntperp>
+							<cntper>Casey Kohrt</cntper>
+						</cntperp>
+					</cntinfo>
+				</proccont>
+			</procstep>
+		</lineage>
+		<posacc>
+			<horizpa>
+				<horizpar>Project vertical accuracy spefication for lidar data points is 1 meter RMSE. No horizontal accuracy tests are planned.
+
+Based on horizontal and vertical accuracy specifications for project lidar data, derivative products should be accurate enough to display at 1:4,800 scale or better </horizpar>
+			</horizpa>
+			<vertacc>
+				<vertaccr>Project vertical accuracy specification is 18 cm RSME on flat nonvegetated surfaces. Accuracy report is pending based on work by NRCS land surveyors. </vertaccr>
+			</vertacc>
+		</posacc>
+	</dataqual>
+	<distinfo>
+		<distrib>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Iowa Geological and WaterSurvey, DNR</cntorg>
+				</cntorgp>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>109 Trowbridge Hall</address>
+					<city>Iowa City</city>
+					<state>IA</state>
+					<postal>52242</postal>
+				</cntaddr>
+				<cntvoice>319-335-1575</cntvoice>
+				<cntemail>gis_library@igsb.uiowa.edu</cntemail>
+				<cntpos>GeoSpatial DBA / NRGIS Librarian</cntpos>
+			</cntinfo>
+		</distrib>
+		<distliab>Although efforts have been made in correcting errors in order to make this information useful to the Department, the Department assumes no responsibility for errors in the information.  Similarly, the Department assumes no responsibility for the consequences of inappropriate uses or interpretations of the data made by anyone to whom this data has been made available.  The Department bears no responsibility to inform users of any changes made to this data.  Anyone using this data is advised that precision implied by the coverage may far exceed actual precision.  Comments on this data are invited and the Department would appreciate that documented errors be brought to staff attention. </distliab>
+		<stdorder>
+			<digform>
+				<digtinfo>
+					<formname>Erdas Imagine file (.IMG)</formname>
+					<filedec>zip</filedec>
+					<transize Sync="TRUE">0.000</transize>
+					<dssize Sync="TRUE">0.000</dssize>
+				</digtinfo>
+				<digtopt>
+					<onlinopt>
+						<computer>
+							<networka>
+								<networkr>ftp://ftp.igsb.uiowa.edu/gis_library/counties/Pottawattamie/DEM_3M_I_78.zip</networkr>
+							</networka>
+						</computer>
+						<accinstr>Click on FTP link provided.</accinstr>
+					</onlinopt>
+				</digtopt>
+			</digform>
+			<fees>None</fees>
+			<ordering>Click on links provided. jp2 file is the image file, zip file contains ancillary files.</ordering>
+			<turnarnd>Immediate</turnarnd>
+		</stdorder>
+		<availabl>
+			<timeinfo>
+				<sngdate>
+					<caldate>365 days/year</caldate>
+					<time>24 hours/day</time>
+				</sngdate>
+			</timeinfo>
+		</availabl>
+		<resdesc>Downloadable Data</resdesc>
+	</distinfo>
+	<distinfo>
+		<resdesc>Live Data and Maps</resdesc>
+		<distrib>
+			<cntinfo>
+				<cntemail>gis_library@igsb.uiowa.edu</cntemail>
+				<cntvoice>319-335-1575</cntvoice>
+				<cntorgp>
+					<cntorg>Iowa Geological and Water Survey, DNR</cntorg>
+					<cntper>GeoSpatial DBA</cntper>
+				</cntorgp>
+			</cntinfo>
+		</distrib>
+		<distliab>Although efforts have been made in correcting errors in order to make this information useful to the Department, the Department assumes no responsibility for errors in the information.  Similarly, the Department assumes no responsibility for the consequences of inappropriate uses or interpretations of the data made by anyone to whom this data has been made available.  The Department bears no responsibility to inform users of any changes made to this data.  Anyone using this data is advised that precision implied by the coverage may far exceed actual precision.  Comments on this data are invited and the Department would appreciate that documented errors be brought to staff attention.</distliab>
+		<stdorder>
+			<digform>
+				<digtopt>
+					<onlinopt>
+						<computer>
+							<networka>
+								<networkr>http://www.iowadnr.gov/</networkr>
+							</networka>
+						</computer>
+						<accinstr>Click "Mapping (GIS Interactive)" on the left menu.  Then Click the appropriate Mapping Application.</accinstr>
+					</onlinopt>
+				</digtopt>
+				<digtinfo>
+					<formname>SDE Feature Class</formname>
+					<transize Sync="TRUE">0.000</transize>
+					<dssize Sync="TRUE">0.000</dssize>
+				</digtinfo>
+			</digform>
+			<fees>None</fees>
+			<ordering>Click on link provided.</ordering>
+			<turnarnd>Immediate</turnarnd>
+		</stdorder>
+		<availabl>
+			<timeinfo>
+				<mdattim>
+					<sngdate>
+						<caldate>365 days / year</caldate>
+						<time>24 hours / day</time>
+					</sngdate>
+				</mdattim>
+			</timeinfo>
+		</availabl>
+	</distinfo>
+	<metainfo>
+		<metc>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Iowa Geological and Water Survey, DNR</cntorg>
+					<cntper>NRGIS Librarian</cntper>
+				</cntorgp>
+				<cntaddr>
+					<addrtype>Mailing and Physical</addrtype>
+					<address>109 Trowbridge Hall</address>
+					<city>Iowa City</city>
+					<state>IA</state>
+					<postal>52242-1319</postal>
+				</cntaddr>
+				<cntvoice>319-335-1575</cntvoice>
+				<cntemail>gis_library@igsb.uiowa.edu</cntemail>
+			</cntinfo>
+		</metc>
+		<metstdn Sync="TRUE">FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+		<metstdv Sync="TRUE">FGDC-STD-001-1998</metstdv>
+		<mettc Sync="TRUE">local time</mettc>
+		<metac>None</metac>
+		<metuc>None</metuc>
+		<metd Sync="TRUE">20101025</metd>
+		<langmeta Sync="TRUE">en</langmeta>
+	</metainfo>
+	<Esri><ModDate>20201021</ModDate><ModTime>07152300</ModTime><SyncDate>20201021</SyncDate><SyncTime>07152300</SyncTime><DataProperties><itemProps><itemName Sync="TRUE">dem.tif</itemName><itemLocation><linkage Sync="TRUE">file://\\IT081823\C$\Users\fwillia1\Downloads\data\final\dem.tif</linkage><protocol Sync="TRUE">Local Area Network</protocol></itemLocation><imsContentType Sync="TRUE">002</imsContentType><nativeExtBox><westBL Sync="TRUE">297710.733817</westBL><eastBL Sync="TRUE">298541.733817</eastBL><southBL Sync="TRUE">4573990.000000</southBL><northBL Sync="TRUE">4575001.000000</northBL><exTypeCode Sync="TRUE">1</exTypeCode></nativeExtBox></itemProps><coordRef><type Sync="TRUE">Projected</type><geogcsn Sync="TRUE">GCS_North_American_1983</geogcsn><csUnits Sync="TRUE">Linear Unit: Meter (1.000000)</csUnits><projcsn Sync="TRUE">NAD_1983_UTM_Zone_15N</projcsn><peXml Sync="TRUE">&lt;ProjectedCoordinateSystem xsi:type='typens:ProjectedCoordinateSystem' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/2.2.0'&gt;&lt;WKT&gt;PROJCS[&amp;quot;NAD_1983_UTM_Zone_15N&amp;quot;,GEOGCS[&amp;quot;GCS_North_American_1983&amp;quot;,DATUM[&amp;quot;D_North_American_1983&amp;quot;,SPHEROID[&amp;quot;GRS_1980&amp;quot;,6378137.0,298.257222101]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433]],PROJECTION[&amp;quot;Transverse_Mercator&amp;quot;],PARAMETER[&amp;quot;False_Easting&amp;quot;,500000.0],PARAMETER[&amp;quot;False_Northing&amp;quot;,0.0],PARAMETER[&amp;quot;Central_Meridian&amp;quot;,-93.0],PARAMETER[&amp;quot;Scale_Factor&amp;quot;,0.9996],PARAMETER[&amp;quot;Latitude_Of_Origin&amp;quot;,0.0],UNIT[&amp;quot;Meter&amp;quot;,1.0],AUTHORITY[&amp;quot;EPSG&amp;quot;,26915]]&lt;/WKT&gt;&lt;XOrigin&gt;-5120900&lt;/XOrigin&gt;&lt;YOrigin&gt;-9998100&lt;/YOrigin&gt;&lt;XYScale&gt;450445547.3910538&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;0.001&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;WKID&gt;26915&lt;/WKID&gt;&lt;LatestWKID&gt;26915&lt;/LatestWKID&gt;&lt;/ProjectedCoordinateSystem&gt;</peXml></coordRef><RasterProperties><General><PixelDepth Sync="TRUE">16</PixelDepth><HasColormap Sync="TRUE">FALSE</HasColormap><CompressionType Sync="TRUE">LZW</CompressionType><NumBands Sync="TRUE">1</NumBands><Format Sync="TRUE">TIFF</Format><HasPyramids Sync="TRUE">TRUE</HasPyramids><SourceType Sync="TRUE">discrete</SourceType><PixelType Sync="TRUE">unsigned integer</PixelType><NoDataValue Sync="TRUE">0</NoDataValue></General></RasterProperties><lineage><Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Clip" Date="20201021" Time="071523">Clip DEM_3m_I_78.img "297712.641723633 4573990.38110352 298541.728515625 4575000.66967773" C:\Users\fwillia1\Downloads\data\dem.tif bound 0 NONE NO_MAINTAIN_EXTENT</Process><Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\CopyMultiple" Date="20201021" Time="075424">CopyMultiple "C:\Users\fwillia1\Downloads\data\nishnabotna_2009.tif raster_file_general;C:\Users\fwillia1\Downloads\data\nishnabotna_2018.tif raster_file_general;C:\Users\fwillia1\Downloads\data\river_buffer50.tif raster_file_general;C:\Users\fwillia1\Downloads\data\dem.tif raster_file_general" C:\Users\fwillia1\Downloads\data\final nishnabotna_2009;nishnabotna_2018;river_buffer50;dem "nishnabotna_2009.tif RasterDataset nishnabotna_2009.tif #;nishnabotna_2018.tif RasterDataset nishnabotna_2018.tif #;river_buffer50.tif RasterDataset river_buffer50.tif #;dem.tif RasterDataset dem.tif #"</Process></lineage><copyHistory><copy source="C:\Users\fwillia1\Downloads\data\dem.tif" dest="\\IT081823\C$\Users\fwillia1\Downloads\data\final\dem.tif" date="20201021" time="07542400"></copy></copyHistory></DataProperties><CreaDate>20201021</CreaDate><CreaTime>07542400</CreaTime><SyncOnce>TRUE</SyncOnce></Esri><mdDateSt Sync="TRUE">20201021</mdDateSt><dataIdInfo><envirDesc Sync="TRUE">Microsoft Windows 10 Version 10.0 (Build 18363) ; Esri ArcGIS 12.2.1.12813</envirDesc><dataLang><languageCode Sync="TRUE" value="eng"></languageCode><countryCode value="NZL" Sync="TRUE"></countryCode></dataLang><idCitation><resTitle Sync="TRUE">dem.tif</resTitle><presForm><PresFormCd Sync="TRUE" value="005"></PresFormCd></presForm></idCitation><spatRpType><SpatRepTypCd Sync="TRUE" value="002"></SpatRepTypCd></spatRpType><dataExt><geoEle><GeoBndBox esriExtentType="native"><westBL Sync="TRUE">247892.733817</westBL><eastBL Sync="TRUE">320171.733817</eastBL><northBL Sync="TRUE">4599361</northBL><southBL Sync="TRUE">4558678</southBL><exTypeCode Sync="TRUE">1</exTypeCode></GeoBndBox></geoEle></dataExt><geoBox esriExtentType="decdegrees"><westBL Sync="TRUE">-96.020712</westBL><eastBL Sync="TRUE">-95.143336</eastBL><northBL Sync="TRUE">41.525705</northBL><southBL Sync="TRUE">41.140265</southBL><exTypeCode Sync="TRUE">1</exTypeCode></geoBox><dataExt><geoEle><GeoBndBox esriExtentType="search"><exTypeCode Sync="TRUE">1</exTypeCode><westBL Sync="TRUE">-95.416235</westBL><eastBL Sync="TRUE">-95.405983</eastBL><northBL Sync="TRUE">41.301326</northBL><southBL Sync="TRUE">41.292019</southBL></GeoBndBox></geoEle></dataExt></dataIdInfo><mdLang><languageCode Sync="TRUE" value="eng"></languageCode><countryCode value="NZL" Sync="TRUE"></countryCode></mdLang><mdStanName Sync="TRUE">ISO 19115 Geographic Information - Metadata</mdStanName><mdStanVer Sync="TRUE">DIS_ESRI1.0</mdStanVer><mdChar><CharSetCd Sync="TRUE" value="004"></CharSetCd></mdChar><mdHrLv><ScopeCd Sync="TRUE" value="005"></ScopeCd></mdHrLv><mdHrLvName Sync="TRUE">dataset</mdHrLvName><distInfo><distributor><distorTran><onLineSrc><linkage Sync="TRUE">file://\\dnriacfs01\Lidar_counties\PottawattamieCo\DEM_3m_I_78.img</linkage><protocol Sync="TRUE">Local Area Network</protocol><orDesc Sync="TRUE">002</orDesc></onLineSrc><transSize Sync="TRUE">0.000</transSize></distorTran><distorFormat><formatName Sync="TRUE">Raster Dataset</formatName></distorFormat></distributor><distFormat><formatName Sync="TRUE">Raster Dataset</formatName></distFormat></distInfo><spdoinfo><direct Sync="TRUE">Raster</direct><rastinfo><rasttype Sync="TRUE">Pixel</rasttype><rowcount Sync="TRUE">13561</rowcount><colcount Sync="TRUE">24093</colcount><rastxsz Sync="TRUE">3.000000</rastxsz><rastysz Sync="TRUE">3.000000</rastysz><rastbpp Sync="TRUE">16</rastbpp><vrtcount Sync="TRUE">1</vrtcount><rastorig Sync="TRUE">Upper Left</rastorig><rastcmap Sync="TRUE">FALSE</rastcmap><rastcomp Sync="TRUE">Run-Length Encoding (ESRI)</rastcomp><rastband Sync="TRUE">1</rastband><rastdtyp Sync="TRUE">pixel codes</rastdtyp><rastplyr Sync="TRUE">FALSE</rastplyr><rastifor Sync="TRUE">IMAGINE Image</rastifor></rastinfo></spdoinfo><spref><horizsys><cordsysn><geogcsn Sync="TRUE">GCS_North_American_1983</geogcsn><projcsn Sync="TRUE">NAD_1983_UTM_Zone_15N</projcsn></cordsysn><planar><planci><plance Sync="TRUE">row and column</plance><plandu Sync="TRUE">meters</plandu><coordrep><absres Sync="TRUE">3.000000</absres><ordres Sync="TRUE">3.000000</ordres></coordrep></planci></planar><geodetic><horizdn Sync="TRUE">North American Datum of 1983</horizdn><ellips Sync="TRUE">Geodetic Reference System 80</ellips><semiaxis Sync="TRUE">6378137.000000</semiaxis><denflat Sync="TRUE">298.257222</denflat></geodetic></horizsys></spref><refSysInfo><RefSystem><refSysID><identCode Sync="TRUE" code="26915">NAD_1983_UTM_Zone_15N</identCode><idCodeSpace Sync="TRUE">EPSG</idCodeSpace><idVersion Sync="TRUE">6.13(3.0.1)</idVersion></refSysID></RefSystem></refSysInfo><spatRepInfo><GridSpatRep><numDims Sync="TRUE">2</numDims><cellGeo><CellGeoCd Sync="TRUE" value="002"></CellGeoCd></cellGeo><tranParaAv Sync="TRUE">1</tranParaAv><axDimProps><Dimen><dimName><DimNameTypCd Sync="TRUE" value="002"></DimNameTypCd></dimName><dimSize Sync="TRUE">24093</dimSize><dimResol><value Sync="TRUE">3</value><uom><UomLength><uomName Sync="TRUE">Meter</uomName><conversionToISOstandardUnit Sync="TRUE">1 Meter = 1 Meter(s)</conversionToISOstandardUnit></UomLength></uom></dimResol></Dimen><Dimen><dimName><DimNameTypCd Sync="TRUE" value="001"></DimNameTypCd></dimName><dimSize Sync="TRUE">13561</dimSize><dimResol><value Sync="TRUE">3</value><uom><UomLength><uomName Sync="TRUE">Meter</uomName><conversionToISOstandardUnit Sync="TRUE">1 Meter = 1 Meter(s)</conversionToISOstandardUnit></UomLength></uom></dimResol></Dimen></axDimProps></GridSpatRep><Georect><cellGeo><CellGeoCd Sync="TRUE" value="002"></CellGeoCd></cellGeo><numDims Sync="TRUE">2</numDims><tranParaAv Sync="TRUE">1</tranParaAv><chkPtAv Sync="TRUE">0</chkPtAv><cornerPts><pos Sync="TRUE">297710.733817 4573990.000000</pos></cornerPts><cornerPts><pos Sync="TRUE">297710.733817 4575001.000000</pos></cornerPts><cornerPts><pos Sync="TRUE">298541.733817 4575001.000000</pos></cornerPts><cornerPts><pos Sync="TRUE">298541.733817 4573990.000000</pos></cornerPts><centerPt><pos Sync="TRUE">298126.233817 4574495.500000</pos></centerPt><axisDimension type="002"><dimSize Sync="TRUE">277</dimSize><dimResol><value Sync="TRUE" uom="m">3.000000</value></dimResol></axisDimension><axisDimension type="001"><dimSize Sync="TRUE">337</dimSize><dimResol><value Sync="TRUE" uom="m">3.000000</value></dimResol></axisDimension><ptInPixel><PixOrientCd Sync="TRUE" value="001"></PixOrientCd></ptInPixel></Georect></spatRepInfo><eainfo><detailed Name="dem.tif.vat"><enttyp><enttypl Sync="TRUE">dem.tif.vat</enttypl><enttypt Sync="TRUE">Table</enttypt><enttypc Sync="TRUE">695</enttypc></enttyp><attr><attrlabl Sync="TRUE">OID</attrlabl><attalias Sync="TRUE">OID</attalias><attrtype Sync="TRUE">OID</attrtype><attwidth Sync="TRUE">4</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale><attrdef Sync="TRUE">Internal feature number.</attrdef><attrdefs Sync="TRUE">ESRI</attrdefs><attrdomv><udom Sync="TRUE">Sequential unique whole numbers that are automatically generated.</udom></attrdomv></attr><attr><attrlabl Sync="TRUE">VALUE</attrlabl><attalias Sync="TRUE">Value</attalias><attrtype Sync="TRUE">Integer</attrtype><attwidth Sync="TRUE">10</attwidth><atprecis Sync="TRUE">10</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">COUNT</attrlabl><attalias Sync="TRUE">Count</attalias><attrtype Sync="TRUE">Double</attrtype><attwidth Sync="TRUE">19</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr></detailed></eainfo><contInfo><ImgDesc><contentTyp><ContentTypCd Sync="TRUE" value="002"></ContentTypCd></contentTyp><covDim><Band><dimDescrp Sync="TRUE">Band_1</dimDescrp><maxVal Sync="TRUE">33159.000000</maxVal><minVal Sync="TRUE">32354.000000</minVal><bitsPerVal Sync="TRUE">16</bitsPerVal><valUnit><UOM type="length"></UOM></valUnit></Band></covDim></ImgDesc></contInfo></metadata>
