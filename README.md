@@ -41,11 +41,25 @@ The green and infrared bands are inputed as seperate rasters. To export images b
 3. Save the raster in your desired location
 
 For the first year's data (2009) the tool inputs should look like this:
-![Create NDWI Raster](/assets/create_ndwi.jpg)
+![Create NDWI Raster](/assets/images/create_ndwi.jpg)
 
 And the output NDWI Raster should look like this:
-![Output NDWI Raster](/assets/out_ndwi.jpg)
+![Output NDWI Raster](/assets/images/out_ndwi.jpg)
 
 Repeat the use of this tool for the second year's data (2018).
 
 ## Step 2: Compute Threshold
+**Input:** NDWI raster, classification mask
+
+**Output:** Threshold for river classification (.txt)
+
+To determine where the river occurs within the NDWI image, AIMM uses the [Li Threshold Method](https://scikit-image.org/docs/dev/auto_examples/developers/plot_threshold_li.html) to segment the image into areas of high and low NDWI values. Areas of high NDWI represent water, and areas of low NDWI represent land.
+
+In order to get a more balanced sample, this tool only uses raster cells within a mask to perform the thresholding. Cells with the value 0 will be included in the analysis, and cell with a NoData value will be excluded. The user is free to use any mask they choose, but in general a one-width buffer of the river is appropriate.
+
+The tool prints the threshold value to the console and also saves the value in a user-specified .txt file.
+
+For the first year's data (2009) the tool inputs and output should look like this:
+![Output NDWI Raster](/assets/images/compute_threshold.jpg)
+
+Repeat the use of this tool for the second year's data (2018).
