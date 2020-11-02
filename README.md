@@ -26,8 +26,26 @@ The first five tools will run the individual components of the AIMM model, while
 ## Step 0: Data Preparation
 This tutorial will use the example data found in the *AIMM_Stable\example_data* folder, but a user's own data can be used as well.
 
-## Step 1: Create NDWI Raster
-**Input:** Green and Near-Infrared bands of aerial image
+## Step 1: Create NDWI Rasters
+**Input:** Green and Near-Infrared bands of aerial image as rasters
 
 **Output:** Normalized Difference Water Index (NDWI) raster
 
+The NDWI index highlights the occurence of water in the landscape and is calucated according to the formula:
+
+    NDWI = green - infrared / green + infrared
+
+The green and infrared bands are inputed as seperate rasters. To export images bands as seperate rasters:
+1. Click on the dropdown icon to show the raster's bands
+2. Right click on your desired band and click *Export to Different Format*
+3. Save the raster in your desired location
+
+For the first year's data (2009) the tool inputs should look like this:
+![Create NDWI Raster](/assets/create_ndwi.jpg)
+
+And the output NDWI Raster should look like this:
+![Output NDWI Raster](/assets/out_ndwi.jpg)
+
+Repeat the use of this tool for the second year's data (2018).
+
+## Step 2: Compute Threshold
