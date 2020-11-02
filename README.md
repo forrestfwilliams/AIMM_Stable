@@ -41,7 +41,7 @@ The green and infrared bands are inputed as seperate rasters. To export images b
 3. Save the raster in your desired location
 
 For the first year's data (2009) the tool inputs should look like this:
-![Create NDWI Raster](https://github.com/forrestfwilliams/AIMM_Stable/blob/master/assets/images/create_ndwi.jpg)
+![Create NDWI Raster](https://github.com/forrestfwilliams/AIMM_Stable/blob/master/assets/images/create_ndwi.JPG)
 
 And the output NDWI Raster should look like this:
 ![Output NDWI Raster](https://github.com/forrestfwilliams/AIMM_Stable/blob/master/assets/images/out_ndwi.JPG)
