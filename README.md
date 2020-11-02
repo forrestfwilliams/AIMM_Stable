@@ -41,10 +41,10 @@ The green and infrared bands are inputed as seperate rasters. To export images b
 3. Save the raster in your desired location
 
 For the first year's data (2009) the tool inputs should look like this:
-![Create NDWI Raster](/assets/images/create_ndwi.jpg)
+![Create NDWI Raster](https://github.com/forrestfwilliams/AIMM_Stable/blob/master/assets/images/create_ndwi.jpg)
 
 And the output NDWI Raster should look like this:
-![Output NDWI Raster](/assets/images/out_ndwi.jpg)
+![Output NDWI Raster](https://github.com/forrestfwilliams/AIMM_Stable/blob/master/assets/images/out_ndwi.JPG)
 
 Repeat the use of this tool for the second year's data (2018).
 
@@ -60,6 +60,6 @@ In order to get a more balanced sample, this tool only uses raster cells within 
 The tool prints the threshold value to the console and also saves the value in a user-specified .txt file.
 
 For the first year's data (2009) the tool inputs and output should look like this:
-![Output NDWI Raster](/assets/images/compute_threshold.jpg)
+![Output NDWI Raster](https://github.com/forrestfwilliams/AIMM_Stable/blob/master/assets/images/compute_threshold.JPG)
 
 Repeat the use of this tool for the second year's data (2018).
