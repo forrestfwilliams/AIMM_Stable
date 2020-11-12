@@ -48,7 +48,7 @@ And the output NDWI Raster should look like this:
 
 Repeat the use of this tool for the second year's data (2018).
 
-## Step 2: Compute Threshold
+## Step 2: Compute Thresholds
 **Input:** NDWI raster, classification mask
 
 **Output:** Threshold for river classification (.txt)
@@ -63,3 +63,23 @@ For the first year's data (2009) the tool inputs and output should look like thi
 ![Output NDWI Raster](https://github.com/forrestfwilliams/AIMM_Stable/blob/master/assets/images/compute_threshold.JPG)
 
 Repeat the use of this tool for the second year's data (2018).
+
+## Step 3: Create River Rasters
+**Input:** NDWI raster, threshold value, minimum size of river zone
+
+**Output:** River raster
+
+Using the threshold value identified in the previous step, this step reclassifies the NDWI image to identifying the river in the image and perform some cleaning operations. Either copy the threshold value from the console, or retrieve it from the text file the **Step 2** created. **Make sure you use the correct threshold for each image**, they will likely be different!
+
+Also, you need to tell the tool if you creating the older or newer river raster, since the raster value that corresponds with the river is different for each year. In the old year's river raster, a value of 0 is land and 1 is river, but in the new year's river raster 0 is land and 2 is river.
+
+For the first year's data (2009) the tool inputs and output should look like this:
+![Output NDWI Raster](https://github.com/forrestfwilliams/AIMM_Stable/blob/master/assets/images/create_river.JPG)
+
+Repeat the use of this tool for the second year's data (2018).
+
+## Step 4: Create Migration Raster
+**Inputs:** Old and New river rasters
+
+**Outputs:** Migration Raster
+
