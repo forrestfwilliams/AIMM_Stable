@@ -4,12 +4,12 @@ The Aerial Imagery Migration Model (AIMM) is a tool for estimating the volume of
 # Contents
 - [Installation](#Installation)
 - [Tutorial](#Tutorial)
-    - [Step 1](#Step-1:-Create-NDWI-Rasters)
-    - [Step 2](#Step-2:-Compute-Thresholds)
-    - [Step 3](#Step-3:-Create-River-Rasters)
-    - [Step 4](#Step-4:-Create-Migration-Raster)
-    - [Step 5](#Step-5:-Calculate-Volumes)
-    - [Full Model](#Full-Model:-AIMM)
+    - [Step-1](#Step-1:-Create-NDWI-Rasters)
+    - [Step-2](#Step-2:-Compute-Thresholds)
+    - [Step-3](#Step-3:-Create-River-Rasters)
+    - [Step-4](#Step-4:-Create-Migration-Raster)
+    - [Step-5](#Step-5:-Calculate-Volumes)
+    - [Full-Model](#Full-Model:-AIMM)
 - [Contact](#Contact)
 - [Citation](#Citation)
 
@@ -141,12 +141,12 @@ And the output erosion and deposition polygons should look likes this:
 
 ## Full Model: AIMM
 **Inputs:**
-- Old and New infrared rasters [(Step 1)](#Step-1:-Create-NDWI-Rasters)
-- Old and New green rasters [(Step 1)](#Step-1:-Create-NDWI-Rasters)
-- River classification mask [(Step 2)](#Step-2:-Compute-Thresholds)
-- Minimum size of river zone [(Step 3)](#Step-3:-Create-River-Rasters)
-- River corridor mask [(Step 4)](#Step-4:-Create-Migration-Raster)
-- DEM scale value [(Step 5)](#Step-5:-Calculate-Volumes)
+- Old and New infrared rasters [(Step-1)](#Step-1:-Create-NDWI-Rasters)
+- Old and New green rasters [(Step-1)](#Step-1:-Create-NDWI-Rasters)
+- River classification mask [(Step-2)](#Step-2:-Compute-Thresholds)
+- Minimum size of river zone [(Step-3)](#Step-3:-Create-River-Rasters)
+- River corridor mask [(Step-4)](#Step-4:-Create-Migration-Raster)
+- DEM scale value [(Step-5)](#Step-5:-Calculate-Volumes)
 
 **Outputs:**
 - Migration Raster [(Step 4)](#Step-4:-Create-Migration-Raster)
