@@ -2,16 +2,16 @@
 The Aerial Imagery Migration Model (AIMM) is a tool for estimating the volume of sediment lost to lateral riverbank erosion. This ArcGIS Pro tool requires two RGBI images of a river corridor and a high-resolution DEM as inputs and outputs a map of river migration as well as polygons of erosion and deposition with associated volumes. You can read the paper describing the model in further detail [here](https://doi.org/10.1016/j.geomorph.2020.107313). Before using the tool, **I strongly recommend working through the tutorial with the provided example data.** This will familiarize you with the components of the tool, and very likely make your own analysis proceed much more smoothly.
 
 # Contents
-- [Installation](#Installation)
-- [Tutorial](#Tutorial)
-    - [Step-1](#Step-1:-Create-NDWI-Rasters)
-    - [Step-2](#Step-2:-Compute-Thresholds)
-    - [Step-3](#Step-3:-Create-River-Rasters)
-    - [Step-4](#Step-4:-Create-Migration-Raster)
-    - [Step-5](#Step-5:-Calculate-Volumes)
-    - [Full-Model](#Full-Model:-AIMM)
-- [Contact](#Contact)
-- [Citation](#Citation)
+- [Installation](#installation)
+- [Tutorial](#tutorial)
+    - [Step 1](#step-1-create-ndwi-rasters)
+    - [Step 2](#step-2-compute-thresholds)
+    - [Step 3](#step-3-create-river-rasters)
+    - [Step 4](#step-4-create-migration-raster)
+    - [Step 5](#step-5-calculate-volumes)
+    - [Full Model](#full-model-AIMM)
+- [Contact](#contact)
+- [Citation](#citation)
 
 # Installation
 ## Requirements
@@ -141,16 +141,16 @@ And the output erosion and deposition polygons should look likes this:
 
 ## Full Model: AIMM
 **Inputs:**
-- Old and New infrared rasters [(Step-1)](#Step-1:-Create-NDWI-Rasters)
-- Old and New green rasters [(Step-1)](#Step-1:-Create-NDWI-Rasters)
-- River classification mask [(Step-2)](#Step-2:-Compute-Thresholds)
-- Minimum size of river zone [(Step-3)](#Step-3:-Create-River-Rasters)
-- River corridor mask [(Step-4)](#Step-4:-Create-Migration-Raster)
-- DEM scale value [(Step-5)](#Step-5:-Calculate-Volumes)
+- Old and New infrared rasters [(Step 1)](#step-1-create-ndwi-rasters)
+- Old and New green rasters [(Step 1)](#step-1-create-ndwi-rasters)
+- River classification mask [(Step 2)](#step-2-compute-thresholds)
+- Minimum size of river zone [(Step 3)](#step-3-create-river-rasters)
+- River corridor mask [(Step 4)](#step-4-create-migration-raster)
+- DEM scale value [(Step 5)](#step-5-calculate-volumes)
 
 **Outputs:**
-- Migration Raster [(Step 4)](#Step-4:-Create-Migration-Raster)
-- Erosion and Deposition Polygons [(Step 5)](#Step-5:-Calculate-Volumes)
+- Migration Raster [(Step 4)](#step-4-create-migration-raster)
+- Erosion and Deposition Polygons [(Step 5)](#step-5-calculate-volumes)
 
 Running the model one step at a time will you provide with a better understanding of the model and also allow you to check your results at each step, but the AIMM tool will you allow to run the AIMM model in one step. Detailed information on each model input and output can found in its respective section. An important caveat of this tool is that intermediate data such as River rasters and River threshold values and are not an output of this tool. River raster can however be derived from the output Migration by using the following reclassificaitons:
 
